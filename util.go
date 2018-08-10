@@ -30,7 +30,7 @@ func ShopBaseUrl(name string) string {
 }
 
 // Return the prefix for a metafield path
-func MetafieldPathPrefix(resource string, resourceID int) string {
+func MetafieldPathPrefix(resource string, resourceID uint64) string {
 	var prefix string
 	if resource == "" {
 		prefix = fmt.Sprintf("admin/metafields")

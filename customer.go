@@ -16,11 +16,11 @@ const customersResourceName = "customers"
 type CustomerService interface {
 	List(interface{}) ([]Customer, error)
 	Count(interface{}) (int, error)
-	Get(int, interface{}) (*Customer, error)
+	Get(uint64, interface{}) (*Customer, error)
 	Search(interface{}) ([]Customer, error)
 	Create(Customer) (*Customer, error)
 	Update(Customer) (*Customer, error)
-	Delete(int) error
+	Delete(uint64) error
 
 	// MetafieldsService used for Customer resource to communicate with Metafields resource
 	MetafieldsService
@@ -32,9 +32,14 @@ type CustomerServiceOp struct {
 	client *Client
 }
 
+
+func NewCustomerServiceOp(cl *Client)CustomerService{
+	return &CustomerServiceOp{client:cl}
+}
+
 // Customer represents a Shopify customer
 type Customer struct {
-	ID                  int                `json:"id,omitempty"`
+	ID                  uint64                `json:"id,omitempty"`
 	Email               string             `json:"email,omitempty"`
 	FirstName           string             `json:"first_name,omitempty"`
 	LastName            string             `json:"last_name,omitempty"`
@@ -91,7 +96,7 @@ func (s *CustomerServiceOp) Count(options interface{}) (int, error) {
 }
 
 // Get customer
-func (s *CustomerServiceOp) Get(customerID int, options interface{}) (*Customer, error) {
+func (s *CustomerServiceOp) Get(customerID uint64, options interface{}) (*Customer, error) {
 	path := fmt.Sprintf("%s/%v.json", customersBasePath, customerID)
 	resource := new(CustomerResource)
 	err := s.client.Get(path, resource, options)
@@ -117,7 +122,7 @@ func (s *CustomerServiceOp) Update(customer Customer) (*Customer, error) {
 }
 
 // Delete an existing customer
-func (s *CustomerServiceOp) Delete(customerID int) error {
+func (s *CustomerServiceOp) Delete(customerID uint64) error {
 	path := fmt.Sprintf("%s/%d.json", customersBasePath, customerID)
 	return s.client.Delete(path)
 }
@@ -131,37 +136,37 @@ func (s *CustomerServiceOp) Search(options interface{}) ([]Customer, error) {
 }
 
 // List metafields for a customer
-func (s *CustomerServiceOp) ListMetafields(customerID int, options interface{}) ([]Metafield, error) {
+func (s *CustomerServiceOp) ListMetafields(customerID uint64, options interface{}) ([]Metafield, error) {
 	metafieldService := &MetafieldServiceOp{client: s.client, resource: customersResourceName, resourceID: customerID}
 	return metafieldService.List(options)
 }
 
 // Count metafields for a customer
-func (s *CustomerServiceOp) CountMetafields(customerID int, options interface{}) (int, error) {
+func (s *CustomerServiceOp) CountMetafields(customerID uint64, options interface{}) (int, error) {
 	metafieldService := &MetafieldServiceOp{client: s.client, resource: customersResourceName, resourceID: customerID}
 	return metafieldService.Count(options)
 }
 
 // Get individual metafield for a customer
-func (s *CustomerServiceOp) GetMetafield(customerID int, metafieldID int, options interface{}) (*Metafield, error) {
+func (s *CustomerServiceOp) GetMetafield(customerID uint64, metafieldID uint64, options interface{}) (*Metafield, error) {
 	metafieldService := &MetafieldServiceOp{client: s.client, resource: customersResourceName, resourceID: customerID}
 	return metafieldService.Get(metafieldID, options)
 }
 
 // Create a new metafield for a customer
-func (s *CustomerServiceOp) CreateMetafield(customerID int, metafield Metafield) (*Metafield, error) {
+func (s *CustomerServiceOp) CreateMetafield(customerID uint64, metafield Metafield) (*Metafield, error) {
 	metafieldService := &MetafieldServiceOp{client: s.client, resource: customersResourceName, resourceID: customerID}
 	return metafieldService.Create(metafield)
 }
 
 // Update an existing metafield for a customer
-func (s *CustomerServiceOp) UpdateMetafield(customerID int, metafield Metafield) (*Metafield, error) {
+func (s *CustomerServiceOp) UpdateMetafield(customerID uint64, metafield Metafield) (*Metafield, error) {
 	metafieldService := &MetafieldServiceOp{client: s.client, resource: customersResourceName, resourceID: customerID}
 	return metafieldService.Update(metafield)
 }
 
 // // Delete an existing metafield for a customer
-func (s *CustomerServiceOp) DeleteMetafield(customerID int, metafieldID int) error {
+func (s *CustomerServiceOp) DeleteMetafield(customerID uint64, metafieldID uint64) error {
 	metafieldService := &MetafieldServiceOp{client: s.client, resource: customersResourceName, resourceID: customerID}
 	return metafieldService.Delete(metafieldID)
 }
