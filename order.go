@@ -158,8 +158,8 @@ type DiscountCode struct {
 
 type LineItem struct {
 	ID                         int              `json:"id,omitempty"`
-	ProductID                  int              `json:"product_id,omitempty"`
-	VariantID                  int              `json:"variant_id,omitempty"`
+	ProductID                  uint64              `json:"product_id,omitempty"`
+	VariantID                  uint64              `json:"variant_id,omitempty"`
 	Quantity                   int              `json:"quantity,omitempty"`
 	Price                      *decimal.Decimal `json:"price,omitempty"`
 	TotalDiscount              *decimal.Decimal `json:"total_discount,omitempty"`
