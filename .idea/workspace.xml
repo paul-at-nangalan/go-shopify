@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41454db9-ad25-49bc-9831-c93629aea24e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metafield_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/metafield_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/order.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/product.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/variant.go" beforeDir="false" afterPath="$PROJECT_DIR$/variant.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +17,26 @@
       <file leaf-file-name="customer.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/customer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="-1056">
               <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customer_address.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customer_address.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="variant.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/variant.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1242">
+              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
             </state>
           </provider>
         </entry>
@@ -27,13 +44,13 @@
       <file leaf-file-name="product.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/product.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state relative-caret-position="-140">
+              <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/order.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -87,15 +104,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applicationcharge.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/applicationcharge.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -125,10 +133,11 @@
         <option value="$PROJECT_DIR$/customer_address.go" />
         <option value="$PROJECT_DIR$/util.go" />
         <option value="$PROJECT_DIR$/customer.go" />
-        <option value="$PROJECT_DIR$/product.go" />
         <option value="$PROJECT_DIR$/metafield.go" />
         <option value="$PROJECT_DIR$/metafield_test.go" />
         <option value="$PROJECT_DIR$/order.go" />
+        <option value="$PROJECT_DIR$/product.go" />
+        <option value="$PROJECT_DIR$/variant.go" />
       </list>
     </option>
   </component>
@@ -335,13 +344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/customer_address.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applicationcharge.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
@@ -353,13 +355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -384,13 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/product.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/goshopify.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2547">
@@ -402,6 +390,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="161" column="37" selection-start-line="161" selection-start-column="37" selection-end-line="161" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/product.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1056">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer_address.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/variant.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
         </state>
       </provider>
     </entry>
