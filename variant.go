@@ -13,12 +13,12 @@ const variantsBasePath = "admin/variants"
 // of the Shopify API.
 // See https://help.shopify.com/api/reference/product_variant
 type VariantService interface {
-	List(int, interface{}) ([]Variant, error)
-	Count(int, interface{}) (int, error)
-	Get(int, interface{}) (*Variant, error)
-	Create(int, Variant) (*Variant, error)
+	List(uint64, interface{}) ([]Variant, error)
+	Count(uint64, interface{}) (int, error)
+	Get(uint64, interface{}) (*Variant, error)
+	Create(uint64, Variant) (*Variant, error)
 	Update(Variant) (*Variant, error)
-	Delete(int, int) error
+	Delete(uint64, uint64) error
 }
 
 // VariantServiceOp handles communication with the variant related methods of
@@ -106,6 +106,6 @@ func (s *VariantServiceOp) Update(variant Variant) (*Variant, error) {
 }
 
 // Delete an existing product
-func (s *VariantServiceOp) Delete(productID uint64, variantID int) error {
+func (s *VariantServiceOp) Delete(productID uint64, variantID uint64) error {
 	return s.client.Delete(fmt.Sprintf("%s/%d/variants/%d.json", productsBasePath, productID, variantID))
 }
