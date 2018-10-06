@@ -16,7 +16,7 @@ const ordersResourceName = "orders"
 type OrderService interface {
 	List(interface{}) ([]Order, error)
 	Count(interface{}) (int, error)
-	Get(int, interface{}) (*Order, error)
+	Get(uint64, interface{}) (*Order, error)
 	Create(Order) (*Order, error)
 
 	// MetafieldsService used for Order resource to communicate with Metafields resource
@@ -114,7 +114,7 @@ type Order struct {
 	PaymentGatewayNames   []string         `json:"payment_gateway_names,omitempty"`
 	ProcessingMethod      string           `json:"processing_method,omitempty"`
 	Refunds               []Refund         `json:"refunds,omitempty"`
-	UserId                int              `json:"user_id,omitempty"`
+	UserId                uint64              `json:"user_id,omitempty"`
 	OrderStatusUrl        string           `json:"order_status_url,omitempty"`
 	Gateway               string           `json:"gateway,omitempty"`
 	Confirmed             bool             `json:"confirmed,omitempty"`
@@ -126,13 +126,13 @@ type Order struct {
 	DeviceID              int              `json:"device_id,omitempty"`
 	Phone                 string           `json:"phone,omitempty"`
 	LandingSiteRef        string           `json:"landing_site_ref,omitempty"`
-	CheckoutID            int              `json:"checkout_id,omitempty"`
+	CheckoutID            uint64              `json:"checkout_id,omitempty"`
 	ContactEmail          string           `json:"contact_email,omitempty"`
 	Metafields            []Metafield      `json:"metafields,omitempty"`
 }
 
 type Address struct {
-	ID           int     `json:"id,omitempty"`
+	ID           uint64     `json:"id,omitempty"`
 	Address1     string  `json:"address1,omitempty"`
 	Address2     string  `json:"address2,omitempty"`
 	City         string  `json:"city,omitempty"`
@@ -157,7 +157,7 @@ type DiscountCode struct {
 }
 
 type LineItem struct {
-	ID                         int              `json:"id,omitempty"`
+	ID                         uint64              `json:"id,omitempty"`
 	ProductID                  uint64              `json:"product_id,omitempty"`
 	VariantID                  uint64              `json:"variant_id,omitempty"`
 	Quantity                   int              `json:"quantity,omitempty"`
@@ -212,7 +212,7 @@ type PaymentDetails struct {
 }
 
 type ShippingLines struct {
-	ID                            int              `json:"id,omitempty"`
+	ID                            uint64              `json:"id,omitempty"`
 	Title                         string           `json:"title,omitempty"`
 	Price                         *decimal.Decimal `json:"price,omitempty"`
 	Code                          string           `json:"code,omitempty"`
@@ -231,7 +231,7 @@ type TaxLine struct {
 }
 
 type Transaction struct {
-	ID             int              `json:"id,omitempty"`
+	ID             uint64              `json:"id,omitempty"`
 	OrderID        int              `json:"order_id,omitempty"`
 	Amount         *decimal.Decimal `json:"amount,omitempty"`
 	Kind           string           `json:"kind,omitempty"`
@@ -315,7 +315,7 @@ func (s *OrderServiceOp) Count(options interface{}) (int, error) {
 }
 
 // Get individual order
-func (s *OrderServiceOp) Get(orderID int, options interface{}) (*Order, error) {
+func (s *OrderServiceOp) Get(orderID uint64, options interface{}) (*Order, error) {
 	path := fmt.Sprintf("%s/%d.json", ordersBasePath, orderID)
 	resource := new(OrderResource)
 	err := s.client.Get(path, resource, options)
